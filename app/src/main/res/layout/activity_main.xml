@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@mipmap/bg_main2"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextClock
+        android:id="@+id/tvClock"
+        android:textSize="@dimen/sp_50"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:format12Hour="hh:mm"
+        android:layout_height="wrap_content"/>
+
+
+    <TextClock
+        android:id="@+id/tvDate"
+        android:textSize="25sp"
+        android:layout_marginStart="20dp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toTopOf="@id/tvClock"
+        app:layout_constraintStart_toEndOf="@id/tvClock"
+        android:layout_width="wrap_content"
+        android:format12Hour="M月dd日"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tvLunar"
+        android:textSize="25sp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/tvDate"
+        app:layout_constraintStart_toStartOf="@id/tvDate"
+        android:layout_width="wrap_content"
+        android:text="农历"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/ivSetting"
+        android:src="@mipmap/ic_setting"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvClock"
+        app:layout_constraintBottom_toBottomOf="@id/tvClock"
+        android:layout_width="wrap_content"
+        android:padding="20dp"
+        android:layout_height="wrap_content"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:id="@+id/rvApp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvClock"
+        android:layout_height="0dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
